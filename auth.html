@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tài Khoản - Gentleman Store</title>
+    <link rel="stylesheet" href="auth.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="auth-container">
+      <div class="auth-box" id="authBox">
+        <div class="form-container login-form">
+          <h2>GENTLEMAN STORE</h2>
+          <p class="subtitle">Đăng nhập tài khoản của bạn</p>
+          <form id="loginForm">
+            <div class="input-group">
+              <label>Số điện thoại</label>
+              <input
+                type="text"
+                id="login-phone"
+                placeholder="Nhập số điện thoại đã đăng ký..."
+              />
+            </div>
+            <div class="input-group">
+              <label>Mật khẩu</label>
+              <input
+                type="password"
+                id="login-pass"
+                placeholder="Nhập mật khẩu..."
+              />
+            </div>
+            <button type="submit" class="btn-submit">ĐĂNG NHẬP</button>
+          </form>
+          <div class="auth-footer">
+            <p>
+              Chưa có tài khoản? <a href="#" id="toRegister">Đăng ký ngay</a>
+            </p>
+            <p>
+              <a href="index.html" class="back-home">← Quay lại trang chủ</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="form-container register-form">
+          <h2>TẠO TÀI KHOẢN</h2>
+          <p class="subtitle">Trở thành thành viên của Gentleman</p>
+          <form id="regForm">
+            <div class="input-group">
+              <label>Họ và tên</label>
+              <input
+                type="text"
+                id="reg-name"
+                placeholder="Ví dụ: Nguyễn Văn A"
+              />
+            </div>
+            <div class="input-group">
+              <label>Số điện thoại</label>
+              <input
+                type="text"
+                id="reg-phone"
+                placeholder="Nhập số điện thoại..."
+              />
+            </div>
+            <div class="input-group">
+              <label>Mật khẩu mới</label>
+              <input
+                type="password"
+                id="reg-pass"
+                placeholder="Tối thiểu 6 ký tự..."
+              />
+            </div>
+            <div class="input-group">
+              <label>Địa chỉ giao hàng</label>
+              <input
+                type="text"
+                id="reg-address"
+                placeholder="Số nhà, tên đường, quận, tỉnh/thành phố..."
+              />
+            </div>
+            <button type="submit" class="btn-submit">ĐĂNG KÝ NGAY</button>
+          </form>
+          <div class="auth-footer">
+            <p>Đã có tài khoản? <a href="#" id="toLogin">Đăng nhập ngay</a></p>
+            <p>
+              <a href="index.html" class="back-home">← Quay lại trang chủ</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="auth.js"></script>
+  </body>
+</html>

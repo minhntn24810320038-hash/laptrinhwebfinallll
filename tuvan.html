@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gentleman Store - Tư Vấn Kích Cỡ Quý Ông</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght=300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="trangsuc.css" />
+    <style>
+      /* Cấu hình thêm CSS riêng cho form tư vấn tối giản */
+      .calculator-container {
+        max-width: 600px;
+        margin: 40px auto;
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .form-group label {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .form-group input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+      }
+      .calc-btn {
+        width: 100%;
+        padding: 15px;
+        background: #111111;
+        color: #ffffff;
+        border: none;
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background 0.3s;
+        border-radius: 4px;
+      }
+      .calc-btn:hover {
+        background: #333333;
+      }
+      .result-box {
+        margin-top: 30px;
+        padding: 20px;
+        background: #f9f9f9;
+        border-left: 4px solid #111111;
+        border-radius: 4px;
+      }
+      .result-item {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      .result-item strong {
+        color: #e53e3e;
+        font-size: 18px;
+      }
+
+      /* CSS sửa lỗi icon giỏ hàng bị lệch */
+      .cart-icon {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+      }
+      .cart-count {
+        position: absolute;
+        top: -8px;
+        right: -10px;
+        background-color: #e53e3e;
+        color: white;
+        font-size: 11px;
+        font-weight: 600;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Montserrat", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <span class="topbar-promo"
+        >🔥 HOTLINE CSKH: 1900.6789 • MIỄN PHÍ GIAO HÀNG TOÀN QUỐC</span
+      >
+      <div class="topbar-links">
+        <a href="auth.html">Đăng Nhập</a>
+        <span class="divider">|</span>
+        <a href="auth.html">Đăng Ký</a>
+      </div>
+    </div>
+
+    <header>
+      <div class="header-container">
+        <div class="logo">GENTLEMAN <span class="logo-sub">STORE</span></div>
+        <nav>
+          <a href="index.html">Trang Chủ</a>
+          <a href="ao.html">Áo Sơ Mi</a>
+          <a href="quan.html">Quần Âu</a>
+          <a href="trangsuc.html">Trang Sức</a>
+          <a href="tuvan.html" class="active">Tư Vấn Size</a>
+        </nav>
+        <div class="header-right">
+          <div class="cart-icon" id="open-cart-btn">
+            <span class="icon-bag" style="font-size: 22px">🛒</span>
+            <span class="cart-count" id="cart-counter">0</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="section-header">
+        <h3 class="cate-title">Tư Vấn Kích Cỡ Chuẩn</h3>
+        <p class="section-subtitle">
+          Nhập thông số cơ thể để hệ thống AI tính toán phom dáng phù hợp nhất
+          với quý ông
+        </p>
+      </div>
+
+      <div class="calculator-container">
+        <div class="form-group">
+          <label>CHIỀU CAO (CM):</label>
+          <input type="number" id="calc-height" placeholder="Ví dụ: 172" />
+        </div>
+        <div class="form-group">
+          <label>CÂN NẶNG (KG):</label>
+          <input type="number" id="calc-weight" placeholder="Ví dụ: 68" />
+        </div>
+
+        <button class="calc-btn" id="calculate-size-btn">
+          XÁC ĐỊNH KÍCH CỠ
+        </button>
+
+        <p
+          id="initial-status"
+          style="
+            text-align: center;
+            margin-top: 20px;
+            color: #888;
+            font-size: 13px;
+          "
+        >
+          Vui lòng nhập thông số và nhấn nút kiểm tra.
+        </p>
+
+        <div class="result-box" id="real-results" style="display: none">
+          <div class="result-item">
+            Size Áo Sơ Mi đề xuất: <strong id="shirt-size-res">M</strong>
+          </div>
+          <div class="result-item">
+            Size Quần Âu đề xuất: <strong id="pants-size-res">30</strong>
+          </div>
+          <p
+            id="analysis-note-text"
+            style="
+              font-size: 13px;
+              color: #555;
+              margin-top: 15px;
+              line-height: 1.6;
+              font-style: italic;
+            "
+          ></p>
+        </div>
+      </div>
+    </main>
+
+    <div class="cart-sidebar-overlay" id="cartSidebarOverlay">
+      <div class="cart-sidebar">
+        <div class="cart-sidebar-header">
+          <h3>Giỏ Hàng Của Quý Ông</h3>
+          <button id="close-cart-btn">&times;</button>
+        </div>
+        <div class="cart-sidebar-body" id="cart-items-container"></div>
+        <div class="cart-sidebar-footer">
+          <div class="total-price-row">
+            <span>TỔNG TIỀN:</span>
+            <span id="cart-total-amount">0đ</span>
+          </div>
+          <button class="checkout-btn" id="checkout-submit-btn">
+            TIẾN HÀNH THANH TOÁN
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-info">
+          <h3>Thông tin liên hệ</h3>
+          <p>
+            <strong>Địa chỉ:</strong> Tầng 8, Tòa nhà 311-313 Trường Chinh,
+            Phường Phương Liệt, Quận Thanh Xuân, Hà Nội
+          </p>
+          <p><strong>Điện thoại:</strong> 0964.942.121</p>
+          <p><strong>Hotline khiếu nại:</strong> 0904.636.356</p>
+          <p><strong>Email:</strong> cskh@gentleman.vn</p>
+        </div>
+
+        <div class="footer-shipping">
+          <h3>Đối tác vận chuyển</h3>
+          <div class="shipping-logos">
+            <div class="logo-item ghn">GHN</div>
+            <div class="logo-item ninja">NINJA</div>
+            <div class="logo-item ahamove">AHAMOVE</div>
+            <div class="logo-item jt">J&T EXPRESS</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 GENTLEMAN STORE - ALL RIGHTS RESERVED. POWERED BY PREMIUM
+          QUALITY.
+        </p>
+      </div>
+    </footer>
+
+    <script src="tuvan.js"></script>
+  </body>
+</html>

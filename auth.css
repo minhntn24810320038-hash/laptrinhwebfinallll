@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1f2937, #111827);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+}
+
+.auth-box {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.form-container h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111111;
+  text-align: center;
+  margin-bottom: 5px;
+  letter-spacing: 1.5px;
+}
+
+.subtitle {
+  color: #666666;
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 6px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.input-group input:focus {
+  border-color: #fbbf24;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 14px;
+  background: #111111;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.btn-submit:hover {
+  background: #fbbf24;
+  color: #111111;
+}
+
+.auth-footer {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 13.5px;
+}
+
+.auth-footer p {
+  margin-bottom: 10px;
+}
+
+.auth-footer a {
+  color: #fbbf24;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-footer a.back-home {
+  color: #9ca3af;
+  font-weight: normal;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* --- LOGIC CHUYỂN ĐỔI FORM --- */
+.auth-box .login-form {
+  display: block;
+}
+.auth-box .register-form {
+  display: none;
+}
+
+.auth-box.show-register .login-form {
+  display: none;
+}
+.auth-box.show-register .register-form {
+  display: block;
+}

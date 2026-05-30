@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gentleman Store - Hệ Thống Thời Trang Nam Cao Cấp</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="topbar">
+      <span class="topbar-promo"
+        >🔥 HOTLINE CSKH: 1900.6789 • MIỄN PHÍ GIAO HÀNG TOÀN QUỐC</span
+      >
+      <div class="topbar-links">
+        <a href="auth.html">Đăng Nhập</a>
+        <span class="divider">|</span>
+        <a href="auth.html">Đăng Ký</a>
+      </div>
+    </div>
+
+    <header>
+      <div class="header-container">
+        <div class="logo">GENTLEMAN <span class="logo-sub">STORE</span></div>
+        <nav>
+          <a href="index.html" class="active">Trang Chủ</a>
+          <a href="ao.html">Áo Sơ Mi</a>
+          <a href="quan.html">Quần Âu</a>
+          <a href="trangsuc.html">Trang Sức</a>
+          <a href="tuvan.html">Tư Vấn Size</a>
+        </nav>
+        <div class="header-right">
+          <div
+            class="cart-icon"
+            id="open-cart-btn"
+            style="position: relative; cursor: pointer"
+          >
+            <span class="icon-bag" style="font-size: 22px">🛒</span>
+            <span
+              class="cart-count"
+              id="cart-counter"
+              style="
+                position: absolute;
+                top: -5px;
+                right: -10px;
+                background: #e53e3e;
+                color: #fff;
+                font-size: 11px;
+                font-weight: 700;
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+              "
+              >0</span
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero-banner">
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <p class="tagline">NEW COLLECTION 2026</p>
+          <h2>THE MODERN<br />GENTLEMAN</h2>
+          <p class="sub-tagline">
+            Định hình phong cách quý ông hiện đại, lịch lãm và bản lĩnh.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <main class="main-content">
+      <div class="content-container">
+        <div class="section-header">
+          <h3 class="cate-title">Bộ Sưu Tập Thời Thượng</h3>
+          <p class="section-subtitle">
+            Chất liệu cao cấp - Thiết kế may đo hoàn hảo dành riêng cho quý ông
+          </p>
+        </div>
+
+        <div class="category-grid">
+          <a href="ao.html" class="category-item">
+            <div class="category-img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600"
+                alt="Áo Sơ Mi"
+              />
+            </div>
+            <div class="category-info">
+              <span>ÁO SƠ MI</span>
+              <p class="category-desc">Lịch lãm công sở</p>
+            </div>
+          </a>
+
+          <a href="quan.html" class="category-item">
+            <div class="category-img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600"
+                alt="Quần Âu"
+              />
+            </div>
+            <div class="category-info">
+              <span>QUẦN ÂU</span>
+              <p class="category-desc">Form dáng hoàn hảo</p>
+            </div>
+          </a>
+
+          <a href="trangsuc.html" class="category-item">
+            <div class="category-img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=600"
+                alt="Trang Sức"
+              />
+            </div>
+            <div class="category-info">
+              <span>TRANG SỨC</span>
+              <p class="category-desc">Điểm nhấn đẳng cấp</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <div class="cart-sidebar-overlay" id="cartSidebarOverlay">
+      <div class="cart-sidebar">
+        <div class="cart-sidebar-header">
+          <h3>Giỏ Hàng Của Quý Ông</h3>
+          <button id="close-cart-btn">&times;</button>
+        </div>
+        <div class="cart-sidebar-body" id="cart-items-container"></div>
+        <div class="cart-sidebar-footer">
+          <div class="total-price-row">
+            <span>TỔNG TIỀN:</span>
+            <span
+              id="cart-total-amount"
+              style="color: #e53e3e; font-weight: 700; font-size: 18px"
+              >0đ</span
+            >
+          </div>
+          <button class="checkout-btn" id="checkout-submit-btn">
+            TIẾN HÀNH THANH TOÁN
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-info">
+          <h3>Thông tin liên hệ</h3>
+          <p>
+            <strong>Địa chỉ:</strong> Tầng 8, Tòa nhà 311-313 Trường Chinh,
+            Phường Phương Liệt, Quận Thanh Xuân, Hà Nội
+          </p>
+          <p><strong>Điện thoại:</strong> 0964.942.121</p>
+          <p><strong>Hotline khiếu nại:</strong> 0904.636.356</p>
+          <p><strong>Email:</strong> cskh@gentleman.vn</p>
+        </div>
+
+        <div class="footer-shipping">
+          <h3>Đối tác vận chuyển</h3>
+          <div class="shipping-logos">
+            <div class="logo-item ghn">GHN</div>
+            <div class="logo-item ninja">NINJA</div>
+            <div class="logo-item ahamove">AHAMOVE</div>
+            <div class="logo-item jt">J&T EXPRESS</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 GENTLEMAN STORE - ALL RIGHTS RESERVED. POWERED BY PREMIUM
+          QUALITY.
+        </p>
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>

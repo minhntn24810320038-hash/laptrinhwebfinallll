@@ -1,0 +1,374 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  background-color: #fbfbfb;
+  color: #111111;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.topbar {
+  background-color: #111111;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 6%;
+}
+.topbar-links a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.topbar-links .divider {
+  color: #444444;
+  margin: 0 10px;
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #f0f0f0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 4%;
+}
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+.logo-sub {
+  font-weight: 300;
+  color: #666666;
+}
+nav a {
+  color: #555555;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-left: 35px;
+}
+nav a.active {
+  color: #000000;
+  font-weight: 600;
+}
+
+.main-content {
+  max-width: 1140px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.cate-title {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.section-subtitle {
+  font-size: 13px;
+  color: #777777;
+}
+
+.calculator-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.calc-card-form,
+.calc-card-result {
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.03);
+  border: 1px solid #f1f1f1;
+}
+.card-title {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #111111;
+  padding-bottom: 10px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.input-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #444444;
+  margin-bottom: 8px;
+}
+.input-group input {
+  padding: 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.input-group input:focus {
+  border-color: #111111;
+  outline: none;
+}
+
+.action-calc-btn {
+  width: 100%;
+  padding: 16px;
+  background: #111111;
+  color: #ffffff;
+  border: none;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.action-calc-btn:hover {
+  background: #333333;
+}
+
+.initial-status-text {
+  font-size: 14px;
+  color: #888888;
+  text-align: center;
+  padding: 40px 0;
+}
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px dashed #e0e0e0;
+}
+.res-label {
+  font-size: 13px;
+  color: #555555;
+}
+.res-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #e53e3e;
+  background: #fff5f5;
+  padding: 4px 14px;
+  border-radius: 4px;
+}
+
+.result-note {
+  margin-top: 25px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-left: 3px solid #111111;
+  font-size: 13px;
+  color: #555555;
+  line-height: 1.6;
+}
+
+.redirect-shop-box {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+.shop-btn-link {
+  flex: 1;
+  text-align: center;
+  padding: 14px;
+  background: #111111;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+.shop-btn-link.outline {
+  background: #ffffff;
+  color: #111111;
+  border: 1px solid #111111;
+}
+
+/* SIDEBAR GIỎ HÀNG */
+.cart-sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+}
+.cart-sidebar-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -440px;
+  width: 440px;
+  height: 100%;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.4s ease;
+}
+.cart-sidebar-overlay.open .cart-sidebar {
+  right: 0;
+}
+
+/* FOOTER */
+footer {
+  background: #111111;
+  color: #aaaaaa;
+  padding: 60px 0 30px 0;
+  margin-top: 60px;
+}
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.shipping-logos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.logo-item {
+  background: #ffffff;
+  color: #111111;
+  padding: 8px;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 4px;
+}
+.footer-bottom {
+  max-width: 1100px;
+  margin: 30px auto 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid #222222;
+  font-size: 11px;
+}
+
+@media (max-width: 768px) {
+  .calculator-container {
+    grid-template-columns: 1fr;
+  }
+  nav {
+    display: none;
+  }
+}
+.calculator-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+.calc-btn {
+  width: 100%;
+  padding: 15px;
+  background: #111111;
+  color: #ffffff;
+  border: none;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s;
+  border-radius: 4px;
+}
+.calc-btn:hover {
+  background: #333333;
+}
+.result-box {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-left: 4px solid #111111;
+  border-radius: 4px;
+}
+.result-item {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.result-item strong {
+  color: #e53e3e;
+  font-size: 18px;
+}
+
+/* CSS sửa lỗi icon giỏ hàng bị lệch */
+.cart-icon {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: #e53e3e;
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+}

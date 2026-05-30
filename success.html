@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thanh Toán Thành Công - Gentleman Store</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Thiết lập nền tảng căn giữa màn hình */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      body {
+        background-color: #f8f8f8;
+        color: #111111;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* Khung hóa đơn trắng nổi bật */
+      .success-card {
+        background: #ffffff;
+        max-width: 580px;
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.05);
+        padding: 45px 40px;
+        text-align: center;
+        border-top: 4px solid #111111;
+      }
+
+      /* Vòng tròn dấu tích */
+      .success-icon {
+        width: 65px;
+        height: 65px;
+        background: #111111;
+        color: #ffffff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        margin: 0 auto 22px auto;
+      }
+
+      h1 {
+        font-size: 22px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
+        color: #111111;
+      }
+
+      .thankyou-text {
+        font-size: 13.5px;
+        color: #666666;
+        line-height: 1.5;
+        margin-bottom: 35px;
+      }
+
+      /* Khối thông tin mã đơn hàng */
+      .order-meta {
+        background: #fafafa;
+        border: 1px dashed #dddddd;
+        padding: 16px;
+        border-radius: 6px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 12.5px;
+        margin-bottom: 35px;
+      }
+
+      .order-meta strong {
+        color: #111111;
+      }
+
+      /* Tiêu đề danh sách đơn hàng */
+      .invoice-title {
+        text-align: left;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #eeeeee;
+        padding-bottom: 10px;
+        color: #111111;
+      }
+
+      /* Cấu trúc từng sản phẩm */
+      .product-list {
+        margin-bottom: 25px;
+      }
+
+      .product-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+        border-bottom: 1px solid #f6f6f6;
+        text-align: left;
+      }
+
+      .prod-info {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .prod-img {
+        width: 55px;
+        height: 55px;
+        object-fit: cover;
+        border-radius: 4px;
+        background: #f4f4f4;
+        border: 1px solid #eeeeee;
+      }
+
+      .prod-details h4 {
+        font-size: 13px;
+        font-weight: 600;
+        color: #111111;
+        margin-bottom: 4px;
+      }
+
+      .prod-details p {
+        font-size: 11.5px;
+        color: #777777;
+      }
+
+      .prod-price {
+        font-size: 13px;
+        font-weight: 600;
+        color: #111111;
+      }
+
+      /* Khối tổng kết số tiền */
+      .summary-block {
+        background: #ffffff;
+        padding-top: 10px;
+      }
+
+      .summary-row {
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+        margin-bottom: 12px;
+        color: #666666;
+      }
+
+      .summary-row.total {
+        border-top: 1px solid #111111;
+        padding-top: 18px;
+        margin-top: 5px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #000000;
+        letter-spacing: 1px;
+      }
+
+      /* Nút quay về trang chủ */
+      .btn-home {
+        display: block;
+        width: 100%;
+        background: #111111;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 16px;
+        font-size: 11.5px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border-radius: 4px;
+        margin-top: 30px;
+        text-align: center;
+        transition: background 0.2s ease;
+      }
+
+      .btn-home:hover {
+        background: #333333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="success-card">
+      <div class="success-icon">✓</div>
+
+      <h1>Thanh Toán Thành Công</h1>
+      <p class="thankyou-text">
+        Cảm ơn quý ông đã tin tưởng lựa chọn sản phẩm của Gentleman Store.
+      </p>
+
+      <div class="order-meta">
+        <div>Mã đơn hàng: <strong id="order-id">#GTLM-94827</strong></div>
+        <div>Phương thức: <strong>COD (Thanh toán khi nhận hàng)</strong></div>
+      </div>
+
+      <h3 class="invoice-title">Chi tiết đơn hàng</h3>
+
+      <div class="product-list" id="invoice-items"></div>
+
+      <div class="summary-block">
+        <div class="summary-row">
+          <span>Tạm tính:</span>
+          <span id="subtotal-price">0đ</span>
+        </div>
+        <div class="summary-row">
+          <span>Phí vận chuyển:</span>
+          <span>Miễn phí</span>
+        </div>
+        <div class="summary-row total">
+          <span>TỔNG THANH TOÁN:</span>
+          <span id="final-price">0đ</span>
+        </div>
+      </div>
+
+      <a href="ao.html" class="btn-home">Tiếp tục mua sắm</a>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Tự sinh mã đơn ngẫu nhiên nhìn cho chuyên nghiệp
+        document.getElementById("order-id").innerText =
+          "#GTLM-" + Math.floor(100000 + Math.random() * 900000);
+
+        // Đọc dữ liệu đơn hàng thực tế được truyền từ file js qua
+        const orderData =
+          JSON.parse(localStorage.getItem("gentleman_order_data")) || [];
+        const itemsContainer = document.getElementById("invoice-items");
+        let totalAmount = 0;
+
+        // Nếu giỏ trống (vào trực tiếp), tự hiển thị bộ đôi test giao diện chuẩn
+        if (orderData.length === 0) {
+          const defaultItems = [
+            {
+              name: "Áo Sơ Mi Họa Tiết Kẻ Sọc",
+              size: "XL",
+              price: 420000,
+              quantity: 1,
+              img: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=150",
+            },
+            {
+              name: "Áo Sơ Mi Oxford Premium",
+              size: "L",
+              price: 350000,
+              quantity: 1,
+              img: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=150",
+            },
+          ];
+          renderItems(defaultItems);
+        } else {
+          renderItems(orderData);
+        }
+
+        function renderItems(items) {
+          itemsContainer.innerHTML = "";
+          items.forEach((item) => {
+            totalAmount += item.price * item.quantity;
+            // Đã sửa lại lỗi gọi item.image thành item.img đồng bộ với ao.js
+            itemsContainer.innerHTML += `
+              <div class="product-item">
+                <div class="prod-info">
+                  <img src="${item.img}" alt="${item.name}" class="prod-img">
+                  <div class="prod-details">
+                    <h4>${item.name}</h4>
+                    <p>Kích cỡ: ${item.size || "M"} | Số lượng: ${item.quantity}</p>
+                  </div>
+                </div>
+                <div class="prod-price">${(item.price * item.quantity).toLocaleString("vi-VN")}đ</div>
+              </div>
+            `;
+          });
+
+          document.getElementById("subtotal-price").innerText =
+            totalAmount.toLocaleString("vi-VN") + "đ";
+          document.getElementById("final-price").innerText =
+            totalAmount.toLocaleString("vi-VN") + "đ";
+        }
+
+        // Khi bấm nút tiếp tục mua sắm, clear sạch giỏ hàng lẫn hóa đơn tạm
+        document
+          .querySelector(".btn-home")
+          .addEventListener("click", function () {
+            localStorage.removeItem("gentleman_order_data");
+            localStorage.removeItem("gentleman_cart");
+          });
+      });
+    </script>
+  </body>
+</html>
